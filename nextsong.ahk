@@ -23,4 +23,6 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 !Numpad7::ControlSend, ahk_parent, {m}, ahk_exe mpv.exe
 !Numpad1::ControlSend, ahk_parent, {<}, ahk_exe mpv.exe
 !Numpad3::ControlSend, ahk_parent, {>}, ahk_exe mpv.exe
+!Numpad0::ControlSend, ahk_parent, {Left}, ahk_exe mpv.exe
+!NumpadDot::ControlSend, ahk_parent, {Right}, ahk_exe mpv.exe
 
