@@ -1,6 +1,6 @@
 #MaxHotkeysPerInterval 20000
-; [Win+A] Toggle always on top
-;#a::  Winset, Alwaysontop, , A
+; [Ctrl+Win+A] Toggle always on top
+^#a::  Winset, Alwaysontop, , A
 #i::  Winset, Alwaysontop, , A
 
 ; [Win+WheelUp] Increase opacity
