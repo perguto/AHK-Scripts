@@ -1,0 +1,2 @@
+SC11D:: RCtrl
+SC138:: RAlt

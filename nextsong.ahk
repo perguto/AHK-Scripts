@@ -9,6 +9,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ^Numpad4::Send {Media_Prev}
 ;return
 ^Numpad5::Send {Media_Play_Pause}
+^Numpad9::Send {Media_Stop}
 ;return
 ^Numpad8::Send {Volume_Up}
 ;return
@@ -26,3 +27,14 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 !Numpad0::ControlSend, ahk_parent, {Left}, ahk_exe mpv.exe
 !NumpadDot::ControlSend, ahk_parent, {Right}, ahk_exe mpv.exe
 
+#!H:: Send {Browser_Back}
+#!L:: Send {Browser_Forward}
+#!R:: Send {Browser_Refresh}
+#!E:: Send {Browser_Stop}
+#!F:: Send {Browser_Search}
+#!B:: Send {Browser_Favorites}
+#!T:: Send {Browser_Home}
+#!M:: Send {Launch_Mail}
+#!V:: Send {Launch_Media}
+#!1:: Send {Launch_App1}
+#!2:: Send {Launch_App2}
