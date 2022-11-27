@@ -25,8 +25,9 @@ SC56 & B::Send ^{Left}
 SC56 & W::Send ^{Right}
 SC56 & [::Send ^{Up}
 SC56 & ]::Send ^{Down}
-;SC56 & V::Send {Alt Down} ;freezes
-;SC56 & Y::Send {Alt Up}
+SC56 & V::Send {Shift Down}
+SC56 & C::Send {Shift Up}
+SC56 & Y::Send {Shift Up}^C
 ;SC56 = IntlBackslash (left of zxc)
 ;~SC56::Send {SC56}
 
@@ -35,5 +36,4 @@ SC56 & F1::
 Run ahk_man.lnk, Max
 ;ControlSend, ahk_parent, "hallo", ahk_exe hh.exe;not working
 return
-;SC56 & X::ControlSend, ahk_parent, "hallo", ahk_exe "C:\Program Files\AutoHotkey\AutoHotkey.chm";not working
-;SC56 & Z::Send ello
+;SC56 & X::ControlSend, ahk_parent, "hallo", ahk_exe "C:\Program Files\AutoHotkey\AutoHotkey.chm";not working ;SC56 & Z::Send ello
