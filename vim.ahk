@@ -13,6 +13,10 @@
 ; SC56 & L::Send {Silent}{Right}
 ; SC56 & U::Send {Silent}{PgUp}
 ; SC56 & D::Send {Silent}{PgDn}
+; SC56 & B::Send ^{Left}
+; SC56 & W::Send ^{Right}
+; SC56 & [::Send ^{Up}
+; SC56 & ]::Send ^{Down}
 SC56 & I::Home ;go to start of line
 SC56 & A::END ;go to end of line
 SC56 & H::Left
@@ -21,13 +25,20 @@ SC56 & K::Up
 SC56 & L::Right
 SC56 & U::PgUp
 SC56 & D::PgDn
-SC56 & B::Send ^{Left}
-SC56 & W::Send ^{Right}
-SC56 & [::Send ^{Up}
-SC56 & ]::Send ^{Down}
+SC56 & B::^Left
+SC56 & W::^Right
+SC56 & [::^Up
+SC56 & ]::^Down
 SC56 & V::Send {Shift Down}
 SC56 & C::Send {Shift Up}
-SC56 & Y::Send {Shift Up}^C
+SC56 & Space::LButton
+SC56 & X::Del
+SC56 & S::RButton
+; SC56 & Y::
+; Send {Shift Up}
+; Sleep 1
+; Send ^C
+; return
 ;SC56 = IntlBackslash (left of zxc)
 ;~SC56::Send {SC56}
 
