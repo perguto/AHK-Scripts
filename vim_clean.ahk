@@ -1,7 +1,6 @@
 ;#MenuMaskKey vkFF ; necessary to suppress leaking control key if repeatedly using Alt or Meta key shortcuts
 #SingleInstance force
 #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
-;#MaxHotkeysPerInterval 20000
 #Warn  ; Enable warnings to assist with detecting common errors.
 
 ;SC56 = key with scancode 56 = "International Backslash" key (replaces part of the left shift key on some non-American keyboards)
@@ -15,18 +14,6 @@
 ; #If, GetKeyState("SC56", "P")
 ; but this would probably not turn SC56 into a dead key
 
-; SC56 & I::Send {Silent}{Home} ;go to start of line
-; SC56 & A::Send {Silent}{END} ;go to end of line
-; SC56 & H::Send {Silent}{Left}
-; SC56 & J::Send {Silent}{Down}
-; SC56 & K::Send {Silent}{Up}
-; SC56 & L::Send {Silent}{Right}
-; SC56 & U::Send {Silent}{PgUp}
-; SC56 & D::Send {Silent}{PgDn}
-; SC56 & B::Send ^{Left}
-; SC56 & W::Send ^{Right}
-; SC56 & [::Send ^{Up}
-; SC56 & ]::Send ^{Down}
 SC56 & I::Home ;go to start of line
 SC56 & A::END ;go to end of line
 SC56 & H::Left
@@ -43,22 +30,8 @@ SC56 & O::Send {END}{Shift Down}{Enter}{Shift Up} ; o shift + enter to not send 
 #If, GetKeyState("Shift", "P")
 SC56 & O::Send {Home}{Shift Down}{Enter}{Shift Up}{Up} ; O
 #If ; ahk #if isn't recursive, hence this instruction works as an endif
-SC56 & V::Send {Shift Down}
-SC56 & C::Send {Shift Up}
-SC56 & Space::LButton
+;SC56 & V::Send {Shift Down}
+;SC56 & C::Send {Shift Up}
 SC56 & X::Del ; emulating x
-SC56 & S::RButton
-; SC56 & Y::
-; Send {Shift Up}
-; Sleep 1
-; Send ^C
-; return
-;SC56 = IntlBackslash (left of zxc)
-;~SC56::Send {SC56}
-
-SC56 & F1::
-;Run, "C:\Program Files\AutoHotkey\AutoHotkey.chm", Min
-Run ahk_man.lnk, Max
-;ControlSend, ahk_parent, "hallo", ahk_exe hh.exe;not working
-return
-;SC56 & X::ControlSend, ahk_parent, "hallo", ahk_exe "C:\Program Files\AutoHotkey\AutoHotkey.chm";not working ;SC56 & Z::Send ello
+SC56 & Space::LButton  ;  left mouse button
+SC56 & S::RButton ;  right mouse button
