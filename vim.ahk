@@ -1,10 +1,20 @@
-;#MenuMaskKey vkFF
+;#MenuMaskKey vkFF ; necessary to suppress leaking control key if repeatedly using Alt or Meta key shortcuts
 #SingleInstance force
 #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 ;#MaxHotkeysPerInterval 20000
 #Warn  ; Enable warnings to assist with detecting common errors.
 
-;Remark: Don't hold for too long or else you'll send Win key and alt
+;SC56 = key with scancode 56 = "International Backslash" key (replaces part of the left shift key on non-American keyboards)
+; good option if you have it, as its just a second backslash key for the English layout.
+; If you don't have it replace "SC56 & H" etc. with something like "!H" for Alt + H, "^!H" for Ctrl + Alt + H etc
+; ( ^ = Ctrl, ! = Alt, + = Shift, # = Meta (Windows key)
+;obsolete;Remark: Don't hold for too long or else you'll send Win key and alt
+
+; note to myself: 
+; one could try refactoring with 
+; #If, GetKeyState("SC56", "P")
+; but this would probably not turn SC56 into a dead key
+
 ; SC56 & I::Send {Silent}{Home} ;go to start of line
 ; SC56 & A::Send {Silent}{END} ;go to end of line
 ; SC56 & H::Send {Silent}{Left}
@@ -23,16 +33,20 @@ SC56 & H::Left
 SC56 & J::Down
 SC56 & K::Up
 SC56 & L::Right
-SC56 & U::PgUp
-SC56 & D::PgDn
-SC56 & B::^Left
-SC56 & W::^Right
-SC56 & [::^Up
-SC56 & ]::^Down
+SC56 & U::PgUp ; emulating <C-F>
+SC56 & D::PgDn ; emulating <C-B>
+SC56 & B::^Left ; emulating b/B
+SC56 & W::^Right ; emulating w/W 
+SC56 & [::^Up ; emulating {
+SC56 & ]::^Down ; emulating }
+SC56 & O::Send {END}{Enter} ; o
+#If, GetKeyState("Shift", "P")
+SC56 & O::Send {Home}{Enter}{Up} ; O
+#If ; ahk #if isn't recursive, hence this instruction works as an endif
 SC56 & V::Send {Shift Down}
 SC56 & C::Send {Shift Up}
 SC56 & Space::LButton
-SC56 & X::Del
+SC56 & X::Del ; emulating x
 SC56 & S::RButton
 ; SC56 & Y::
 ; Send {Shift Up}

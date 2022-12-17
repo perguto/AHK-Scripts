@@ -1,11 +1,46 @@
 ; WinTitle := "AutoHotkey Help" ; Make sure AutoHotkey CHM help is running
 ; WinActivate, %WinTitle%
 
+;Meine Kommentare ↓
+;u i o = thirds
+
+^#+u::
+WinGetTitle, currentWindow, A
+IfWinExist %currentWindow%
+{
+	WinMove, , , 0, 0 , 640 , 1080 ; This is what you asked for!
+}
+return
+
+^#+i::
+WinGetTitle, currentWindow, A
+IfWinExist %currentWindow%
+{
+	WinMove, , ,  640, 0 , 640 , 1080 ; This is what you asked for!
+}
+return
+
+^#+o::
+WinGetTitle, currentWindow, A
+IfWinExist %currentWindow%
+{
+	WinMove, , ,  1280 ,0 , 640 , 1080 ; This is what you asked for!
+}
+return
+
 ^#+h::
 WinGetTitle, currentWindow, A
 IfWinExist %currentWindow%
 {
 	WinMove, , , 0, 0 , 960, 1080 ; This is what you asked for!
+}
+return
+
+^#+k::
+WinGetTitle, currentWindow, A
+IfWinExist %currentWindow%
+{
+	WinMove, , , 0, 0 , 1920, 1080 ; This is what you asked for!
 }
 return
 
