@@ -39,9 +39,9 @@ SC56 & B::^Left ; emulating b/B
 SC56 & W::^Right ; emulating w/W 
 SC56 & [::^Up ; emulating {
 SC56 & ]::^Down ; emulating }
-SC56 & O::Send {END}{Enter} ; o
+SC56 & O::Send {END}{Shift Up}{Enter}{Shift Down} ; o shift + enter to not send to devtools
 #If, GetKeyState("Shift", "P")
-SC56 & O::Send {Home}{Enter}{Up} ; O
+SC56 & O::Send {Home}{Shift Up}{Enter}{Up}{Shift Down} ; O
 #If ; ahk #if isn't recursive, hence this instruction works as an endif
 SC56 & V::Send {Shift Down}
 SC56 & C::Send {Shift Up}
