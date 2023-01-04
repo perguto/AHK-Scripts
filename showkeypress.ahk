@@ -8,7 +8,7 @@ Loop
 		. "{Up}{Down}{Home}{End}{PgUp}{PgDn}{Del}{Ins}{BS}{CapsLock}{NumLock}"
 		. "{PrintScreen}{Pause}"
 
-		key := Instr(ErrorLevel, "EndKey") ? "{" StrReplace(ErrorLevel, "EndKey:") "}" : key
+		key := Instr(ErrorLevel, "EndKey") ? StrReplace(ErrorLevel, "EndKey:") : key
 
 		name := GetKeyName(key)
 		vk   := GetKeyVK(key)

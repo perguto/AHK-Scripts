@@ -55,7 +55,8 @@ SC56 & S::RButton
 ; return
 ;SC56 = IntlBackslash (left of zxc)
 ;~SC56::Send {SC56}
-#MaxThreadsPerHotkey 2
+
+; #MaxThreadsPerHotkey 2 ;ChatGPT put this at the start, dunno why
 
 ; Repeat the next keypress the given number of times when Ctrl and a digit key are pressed
 SC56 & 0::
