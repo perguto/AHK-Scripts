@@ -3,7 +3,7 @@
 #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 ;#MaxHotkeysPerInterval 20000
 #Warn  ; Enable warnings to assist with detecting common errors.
-
+number := ""
 ;SC56 = key with scancode 56 = "International Backslash" key (replaces part of the left shift key on some non-American keyboards)
 ; good option if you have it, as its just a second backslash key for the English layout.
 ; If you don't have it replace "SC56 & H" etc. with something like "!H" for Alt + H, "^!H" for Ctrl + Alt + H etc
@@ -55,6 +55,59 @@ SC56 & S::RButton
 ; return
 ;SC56 = IntlBackslash (left of zxc)
 ;~SC56::Send {SC56}
+#MaxThreadsPerHotkey 2
+
+; Repeat the next keypress the given number of times when Ctrl and a digit key are pressed
+SC56 & 0::
+SC56 & 1::
+SC56 & 2::
+SC56 & 3::
+SC56 & 4::
+SC56 & 5::
+SC56 & 6::
+SC56 & 7::
+SC56 & 8::
+SC56 & 9::
+    ; Get the digit from the key that was pressed
+    digit := SubStr(A_ThisHotkey, 8)
+	; MsgBox, %digit% 
+	number := number digit
+	; MsgBox % number
+    ; Repeat the next keypress the given number of times
+    ;Send, {Blind}{Shift down} 
+	; Input, key, L1, 
+
+	Input, key, L1 B , % "{LControl}{RControl}{LAlt}{RAlt}{LShift}{RShift}{LWin}{RWin}{AppsKey}"
+		. "{F1}{F2}{F3}{F4}{F5}{F6}{F7}{F8}{F9}{F10}{F11}{F12}{Left}{Right}"
+		. "{Up}{Down}{Home}{End}{PgUp}{PgDn}{Del}{Ins}{BS}{CapsLock}{NumLock}"
+		. "{PrintScreen}{Pause}"
+
+		; key := Instr(ErrorLevel, "EndKey") ? "{" StrReplace(ErrorLevel, "EndKey:") "}" : key
+		key := Instr(ErrorLevel, "EndKey") ? StrReplace(ErrorLevel, "EndKey:") : key
+	; MsgBox {%key% %number%}
+	Send {%key% %number%}
+	#If key is digit
+	number:=""
+	#If
+
+
+    ; Send, {Blind}
+    ; Loop, %digit%
+	; {
+		; ; MsgBox, %key%
+		; ; Send % key aaaaaaaaaa
+		; ; Send {%key%}
+		; Send %key%
+    ;     ; Send, {Shift up}{Blind}{Shift down}{shift up}
+    ;     ; Send, {Blind}aaaaa
+		; }
+return
+
+; Example usage: press SC56 + 3, then press a to repeat "a" 3 times 	  9
+
+; Output: "aaa"
+
+
 
 SC56 & F1::
 ;Run, "C:\Program Files\AutoHotkey\AutoHotkey.chm", Min
