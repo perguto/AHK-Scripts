@@ -37,12 +37,13 @@ for index,word in words
 		; Run, https://en.wiktionary.org/wiki/%word%,, UseErrorLevel
 		; if ErrorLevel
 		; {
-	Run, https://en.wiktionary.org/wiki/%word%
-		if word is not lower
-		{
-			StringLower, word, word
-			Run, https://en.wiktionary.org/wiki/%word%
-		}
+			; Run, https://en.wiktionary.org/wiki/%word%
+				; if word is not lower
+				; if word is not lower
+				; {
+					StringLower, word, word
+						Run, https://en.wiktionary.org/wiki/%word%
+				; }
 			; }
 	;Run https://translate.google.com/#auto/es/%clipboard%
 		; run % "https://en.wiktionary.com/wiki/"word

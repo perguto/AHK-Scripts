@@ -36,6 +36,14 @@ IfWinExist %currentWindow%
 }
 return
 
+^#+j::
+WinGetTitle, currentWindow, A
+IfWinExist %currentWindow%
+{
+	WinMove, , , 0, 0 , 0, 0 ; This is what you asked for!
+}
+return
+
 ^#+k::
 WinGetTitle, currentWindow, A
 IfWinExist %currentWindow%
