@@ -12,5 +12,6 @@ if ErrorLevel
 	;Do nothing after 2 seconds timeout
 		return
 }
-run % "C:\Users\Toni\OrenoCode\exe\speak.ps1" clipboard
+MsgBox %clipboard%
+run  pwsh -nop -i C:\Users\Toni\OrenoCode\exe\speak.ps1 %clipboard%
 return

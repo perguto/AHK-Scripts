@@ -14,6 +14,10 @@
 >!+o::Send, Ö
 >!+u::Send, Ü
 
+>!c::Send, ç
+>!n::Send, ñ
+>!g::Send, ğ
+
 ; <^>!a::Send, ä
 ; <^>!o::Send, ö
 ; <^>!u::Send, ü

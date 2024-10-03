@@ -9,7 +9,8 @@ SetTimer, RemoveToolTip, -1000
 return
 }
 
-^#P::
+!Pause::
+; MsgBox "Shortcut pressed"
 if(pid = ""){
 WinGet, pid, PID, A
 run, pssuspend %pid%,,Hide

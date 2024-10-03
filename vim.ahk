@@ -27,6 +27,9 @@ number := ""
 ; SC56 & W::Send ^{Right}
 ; SC56 & [::Send ^{Up}
 ; SC56 & ]::Send ^{Down}
+
+SC56 & M::Enter
+
 SC56 & I::Home ;go to start of line
 SC56 & A::END ;go to end of line
 SC56 & H::Left
@@ -46,6 +49,7 @@ SC56 & O::Send {Home}{Shift Down}{Enter}{Shift Up}{Up} ; O
 SC56 & V::Send {Shift Down}
 SC56 & C::Send {Shift Up}
 SC56 & Space::LButton
+SC56 & AppsKey::RButton
 SC56 & X::Del ; emulating x
 SC56 & S::RButton
 ; SC56 & Y::

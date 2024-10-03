@@ -1,7 +1,8 @@
 #SingleInstance force
 #Warn
 
-Pause::
+; ^Pause::
+!PrintScreen::
 clipboard =  ; Start off empty to allow ClipWait to detect when the text has arrived.
 Send ^c
 ClipWait, 2  ; Wait for the clipboard to contain text.
@@ -11,7 +12,7 @@ if ErrorLevel
 		return
 }
 ;Run https://translate.google.com/#auto/es/%clipboard%
-run % "brave.exe ""--app=https://translate.google.com/#auto/es/"clipboard
+run % "brave.exe ""https://translate.google.com/#auto/es/"clipboard
 ;Run https://translate.google.com/#auto/es/%clipboard%
 return
 
